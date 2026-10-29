@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>Nach Yomi · Rabbi Yisrael Motzen</title>
+<meta name="description" content="Every Nach Yomi shiur from Rabbi Yisrael Motzen's 5 Minute Nach, by sefer and perek, playing as audio in your phone's own player.">
+<meta name="theme-color" content="#14161c">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="Nach Yomi">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="apple-touch-icon" href="apple-touch-icon.png?v=8">
+<link rel="icon" href="favicon.png?v=8" type="image/png">
+<link rel="shortcut icon" href="favicon.ico?v=8">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="wrap" id="main">
+  <header class="top">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">נ״ך</span>
+      <div>
+        <h1>Nach Yomi</h1>
+        <p class="sub">R’ Yisrael Motzen · 5 Minute Nach</p>
+      </div>
+    </div>
+    <button type="button" id="refresh" class="iconbtn" aria-label="Check for new shiurim" title="Check for new shiurim">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M12 4a8 8 0 0 1 7.4 5h-2.2A6 6 0 1 0 18 13h2a8 8 0 1 1-8-9zm5 0h4v4l-1.5-1.5L17 4z"/></svg>
+    </button>
+  </header>
+  <p id="status" class="status" role="status" aria-live="polite"></p>
+
+  <section id="continue" class="continue" hidden aria-label="Continue listening">
+    <button type="button" id="contBtn" class="cont-btn">
+      <span class="cont-play" aria-hidden="true"></span>
+      <span class="cont-txt"><span class="cont-k">Continue listening</span><span id="contT" class="cont-t"></span></span>
+    </button>
+  </section>
+
+  <div class="search">
+    <label for="q" class="sr">Search shiurim</label>
+    <input id="q" type="search" placeholder="Search sefer, perek or topic" autocomplete="off" spellcheck="false" enterkeyhint="search">
+  </div>
+
+  <div class="viewbar">
+    <div class="tabs" role="tablist" aria-label="View">
+      <button type="button" class="seg" role="tab" data-view="latest" aria-selected="true">Latest</button>
+      <button type="button" class="seg" role="tab" data-view="sefer" aria-selected="false">By sefer</button>
+    </div>
+    <label class="chk"><input type="checkbox" id="hidePlayed"> Hide played</label>
+  </div>
+
+  <section id="list" class="lib" aria-live="polite"></section>
+  <p id="empty" class="sub empty" hidden>No shiurim match that search.</p>
+
+  <footer class="foot">
+    <p>New shiurim are added once a day: a scheduled job in this site's GitHub repository checks Rabbi Motzen's YouTube playlist and saves the audio here. Tap ↻ to reload the list.</p>
+    <p>Source: <a href="https://www.youtube.com/playlist?list=PLSK0XEJA9jdw" rel="noopener">5 Minute Nach on YouTube</a>. Want the video too? Each shiur has a “Watch video” link.</p>
+    <p>Tip: in Safari tap Share → Add to Home Screen to keep this as an app.</p>
+  </footer>
+</main>
+
+<section id="player" class="player" hidden aria-label="Now playing">
+  <div class="pl-head">
+    <img id="plImg" alt="" width="64" height="36">
+    <div class="pl-titles">
+      <p id="plT" class="pl-t"></p>
+      <p id="plS" class="pl-s"></p>
+    </div>
+    <button type="button" id="plMin" class="iconbtn sm" aria-label="Collapse player" aria-expanded="true">
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M7 10l5 5 5-5z"/></svg>
+    </button>
+  </div>
+  <div class="pl-body">
+    <input type="range" id="seek" min="0" max="100" step="1" value="0" aria-label="Position">
+    <div class="times"><span id="cur">0:00</span><span id="msg" class="msg"></span><span id="rem">0:00</span></div>
+    <div class="pl-ctl">
+      <button type="button" id="speed" class="ctl txt" aria-label="Playback speed">1×</button>
+      <button type="button" id="back" class="ctl" aria-label="Back 15 seconds">−15</button>
+      <button type="button" id="play" class="ctl big" aria-label="Play"><span class="ico-play" aria-hidden="true"></span></button>
+      <button type="button" id="fwd" class="ctl" aria-label="Forward 30 seconds">+30</button>
+      <button type="button" id="next" class="ctl" aria-label="Next perek">
+        <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M6 6l8.5 6L6 18zM16 6h2v12h-2z"/></svg>
+      </button>
+    </div>
+    <div class="pl-more">
+      <button type="button" id="plPlayed" class="link" aria-pressed="false">Mark played</button>
+      <label class="chk"><input type="checkbox" id="auto" checked> Auto-play next perek</label>
+      <a id="plVideo" class="link" href="#" rel="noopener">Watch video</a>
+    </div>
+  </div>
+  <audio id="audio" preload="none" playsinline x-webkit-airplay="allow"></audio>
+</section>
+
+<script src="nach.js" defer></script>
+<script src="app.js" defer></script>
+</body>
+</html>

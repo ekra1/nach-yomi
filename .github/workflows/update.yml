@@ -1,0 +1,84 @@
+name: Daily update (new shiurim)
+
+on:
+  schedule:
+    - cron: "17 13,21 * * *"   # twice a day, 9:17 AM and 5:17 PM New York (EDT)
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: "Max shiurim to download this run"
+        required: false
+        default: "30"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install yt-dlp, ffmpeg and deno
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+          python -m pip install --quiet --upgrade "yt-dlp[default]"
+          curl -fsSL https://deno.land/install.sh | sh -s -- -y >/dev/null
+          echo "$HOME/.deno/bin" >> "$GITHUB_PATH"
+
+      - name: Find new shiurim and save their audio
+        id: update
+        continue-on-error: true
+        run: python scripts/update.py --limit "${{ github.event.inputs.limit || '30' }}"
+
+      - name: Commit changes
+        run: |
+          git config user.name "nach-yomi-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A catalog.json audio
+          if git diff --cached --quiet; then echo "No changes."; else
+            git commit -m "Add new shiurim ($(date -u +%Y-%m-%d))" && git push
+          fi
+
+    outputs:
+      outcome: ${{ steps.update.outcome }}
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  report:
+    needs: [update, deploy]
+    if: needs.update.outputs.outcome == 'failure'
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "The update script reported a problem (open the 'update' job log). Anything it did save was committed and published."
+          exit 1
