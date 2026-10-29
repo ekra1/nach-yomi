@@ -19,6 +19,9 @@ CATALOG = os.path.join(ROOT, "catalog.json")
 AUDIO = os.path.join(ROOT, "audio")
 PLAYLIST_ID = "PLSK0XEJA9jdw"
 CHANNEL_ID = "UC-BXhEPqRXcCeyiWu8iTYpg"
+# Public audio copies on the original library site (used only when YouTube blocks the download;
+# if that site is gone this simply fails and YouTube remains the only source).
+MIRROR = "https://motzen-nach.sites.tab.bot/a/"
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130 Safari/537.36"
 
 # Nach sefarim: (key, chapters, aliases). Mirrors nach.js (the page parses titles itself).
@@ -97,17 +100,35 @@ def download(vid, workdir):
     attempts = [
         ["--remote-components", "ejs:github", "-f", "140/bestaudio/18/best"],
         ["--extractor-args", "youtube:player_client=web_embedded", "-f", "140/bestaudio/18/best/worst"],
-        ["--extractor-args", "youtube:player_client=tv,mweb", "-f", "140/bestaudio/18/best/worst"],
+        ["--extractor-args", "youtube:player_client=android_vr,tv_simply,web_safari,mweb", "-f", "140/bestaudio/18/best/worst"],
     ]
+    # Optional: a YouTube cookies.txt saved as the repository secret YT_COOKIES (see README).
+    cookies = os.path.join(workdir, "cookies.txt")
+    if os.environ.get("YT_COOKIES") and not os.path.exists(cookies):
+        open(cookies, "w").write(os.environ["YT_COOKIES"])
+    if os.path.exists(cookies):
+        attempts = [a + ["--cookies", cookies] for a in attempts[:1]] + attempts
     err = ""
+    files = []
     for extra in attempts:
         r = run(["yt-dlp", "-q", "--no-warnings", "--no-playlist", "--write-info-json"] + extra + ["-o", src + ".%(ext)s", url], 300)
         files = [f for f in os.listdir(workdir) if f.startswith(vid + ".") and not f.endswith((".part", ".json"))]
         if files:
             break
-        err = (r.stderr or r.stdout)[-400:]
-    else:
-        raise RuntimeError("download failed: " + err)
+        err = (r.stderr or r.stdout).strip()[-300:]
+    if not files and MIRROR:
+        # Last resort: the original library site's public copy of the same audio, while that site exists.
+        try:
+            req = urllib.request.Request(MIRROR + vid + ".m4a", headers={"user-agent": UA})
+            with urllib.request.urlopen(req, timeout=120) as resp:
+                if resp.status == 200 and "audio" in (resp.headers.get("content-type") or ""):
+                    with open(src + ".mirror.m4a", "wb") as f:
+                        f.write(resp.read())
+                    files = [vid + ".mirror.m4a"]
+        except Exception as e:
+            err += " | mirror: %s" % e
+    if not files:
+        raise RuntimeError("YouTube download failed: " + err)
     info = {}
     if os.path.exists(src + ".info.json"):
         info = json.load(open(src + ".info.json"))

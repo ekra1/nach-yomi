@@ -11,9 +11,11 @@ Every shiur from Rabbi Yisrael Motzen's **5 Minute Nach**, by sefer and perek, a
 - `catalog.json` lists every shiur (YouTube id, title, date, length, whether audio is saved).
 - `audio/<YouTube id>.m4a` is each shiur's audio (AAC, 48 kbps mono, about 2 MB each).
 - GitHub Pages publishes the site (`.github/workflows/pages.yml`, on every push to `main`).
-- `.github/workflows/update.yml` runs twice a day (and from the Actions tab → "Daily update" → Run workflow). It runs `scripts/update.py`, which checks the 5 Minute Nach playlist and the channel's feed, downloads new shiurim with yt-dlp, converts them with ffmpeg, updates `catalog.json`, commits, and republishes.
+- `.github/workflows/update.yml` runs twice a day. To run it now: Actions tab → "Daily update (new shiurim)" → Run workflow, or edit the file `.github/run-update` (any change) and commit. It runs `scripts/update.py`, which checks the 5 Minute Nach playlist and the channel's feed, downloads new shiurim with yt-dlp, converts them with ffmpeg, updates `catalog.json`, commits, and republishes.
 
-If YouTube blocks the download on GitHub's servers, the shiur still appears in the list with a "Watch on YouTube" link. To add the audio yourself from any computer with Python, `yt-dlp` and `ffmpeg`:
+YouTube often blocks downloads from GitHub's servers ("Sign in to confirm you're not a bot"). When that happens the script tries, in order: other YouTube player clients; your cookies, if you saved a YouTube `cookies.txt` as the repository secret `YT_COOKIES` (Settings → Secrets and variables → Actions; best from a spare Google account); and the public audio copy on the original library site (motzen-nach.sites.tab.bot) while it exists. If all fail, the shiur still appears in the list with a "Watch on YouTube" link and is retried on the next run.
+
+To add the audio yourself from any computer with Python, `yt-dlp` and `ffmpeg` (home internet is rarely blocked):
 
 ```
 git clone https://github.com/ekra1/nach-yomi && cd nach-yomi

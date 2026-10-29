@@ -44,6 +44,8 @@ jobs:
         id: update
         continue-on-error: true
         run: python scripts/update.py --limit "${{ github.event.inputs.limit || '30' }}"
+        env:
+          YT_COOKIES: ${{ secrets.YT_COOKIES }}
 
       - name: Commit changes
         run: |
