@@ -1,6 +1,6 @@
 {
- "updated": "2026-10-29T14:57:22Z",
- "last_ok": 1793285842964,
+ "updated": "2026-10-29T15:07:13Z",
+ "last_ok": 1793286433435,
  "count": 47,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
@@ -13,8 +13,8 @@
    "sefer": "yirmiyahu",
    "perek": 47,
    "published": "2026-10-29T05:28:04-07:00",
-   "duration": 327,
-   "audio": false
+   "duration": 326,
+   "audio": true
   },
   {
    "id": "zpJx5QHuutI",
