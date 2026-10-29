@@ -60,6 +60,13 @@ def parse_nach(title):
             return {"sefer": key, "perek": int(m.group(1))}
     return None
 
+def _ts(s):
+    from datetime import datetime, timezone
+    try:
+        return datetime.fromisoformat(str(s).replace("Z", "+00:00")).timestamp()
+    except Exception:
+        return 0
+
 def log(*a):
     print(time.strftime("%H:%M:%S"), *a, flush=True)
 
@@ -137,13 +144,14 @@ def main():
         if vid not in items and v.get("title") and v["title"] not in ("[Private video]", "[Deleted video]"):
             p = parse_nach(v["title"]) or {}
             items[vid] = {"id": vid, "title": v["title"], "sefer": p.get("sefer"), "perek": p.get("perek"),
-                          "published": v.get("published"), "duration": 0, "audio": False}
+                          "published": v.get("published") or time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+                          "duration": 0, "audio": False}
             added += 1
             log("new shiur:", v["title"])
 
     os.makedirs(AUDIO, exist_ok=True)
     todo = [i for i in items.values() if not i.get("audio") or not os.path.exists(os.path.join(AUDIO, i["id"] + ".m4a"))]
-    todo.sort(key=lambda i: i.get("published") or "", reverse=True)
+    todo.sort(key=lambda i: _ts(i.get("published")), reverse=True)
     saved, failed = [], []
     with tempfile.TemporaryDirectory() as wd:
         for it in todo[:limit]:
@@ -164,7 +172,7 @@ def main():
             for f in os.listdir(wd):
                 if f.startswith(it["id"]): os.remove(os.path.join(wd, f))
 
-    out = sorted(items.values(), key=lambda i: i.get("published") or "", reverse=True)
+    out = sorted(items.values(), key=lambda i: _ts(i.get("published")), reverse=True)
     cat.update({"updated": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), "count": len(out), "items": out})
     if found:
         cat["last_ok"] = int(time.time() * 1000)
