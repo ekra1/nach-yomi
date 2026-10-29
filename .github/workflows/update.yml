@@ -3,6 +3,9 @@ name: Daily update (new shiurim)
 on:
   schedule:
     - cron: "17 13,21 * * *"   # twice a day, 9:17 AM and 5:17 PM New York (EDT)
+  push:
+    branches: [main]
+    paths: [".github/run-update"]   # editing this file also starts a run
   workflow_dispatch:
     inputs:
       limit:
