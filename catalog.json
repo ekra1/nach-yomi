@@ -1,12 +1,21 @@
 {
- "updated": "2026-10-30T02:40:48Z",
- "last_ok": 1793328048566,
- "count": 47,
+ "updated": "2026-10-30T20:52:54Z",
+ "last_ok": 1793393574261,
+ "count": 48,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "r5Blp-4fNao",
+   "title": "Yirmiyahu 48 - The Destruction of Moav - and Canada",
+   "sefer": "yirmiyahu",
+   "perek": 48,
+   "published": "2026-10-30T12:05:31+00:00",
+   "duration": 309,
+   "audio": true
+  },
   {
    "id": "iRpqPFAzQrI",
    "title": "Yirmiyahu 47 - Palestine and the ancient Philistines, Bald Egyptians",
