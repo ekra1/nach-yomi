@@ -1,20 +1,29 @@
 {
- "updated": "2026-11-01T02:19:52Z",
- "last_ok": 1793499592569,
- "count": 49,
+ "updated": "2026-11-01T20:35:23Z",
+ "last_ok": 1793565323824,
+ "count": 50,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
   {
+   "id": "euPdpRF0x9Y",
+   "title": "Yirmiyahu 50 - The Downfall of Bavel",
+   "sefer": "yirmiyahu",
+   "perek": 50,
+   "published": "2026-11-01T13:47:15+00:00",
+   "duration": 322,
+   "audio": true
+  },
+  {
    "id": "H_5YQrNe7wA",
    "title": "Yirmiyahu 49 - Edom/ Rome/ The Western World",
    "sefer": "yirmiyahu",
    "perek": 49,
    "published": "2026-11-01T02:19:46Z",
-   "duration": 0,
-   "audio": false
+   "duration": 245,
+   "audio": true
   },
   {
    "id": "r5Blp-4fNao",
