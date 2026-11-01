@@ -1,12 +1,21 @@
 {
- "updated": "2026-10-31T20:03:04Z",
- "last_ok": 1793476984212,
- "count": 48,
+ "updated": "2026-11-01T02:19:52Z",
+ "last_ok": 1793499592569,
+ "count": 49,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "H_5YQrNe7wA",
+   "title": "Yirmiyahu 49 - Edom/ Rome/ The Western World",
+   "sefer": "yirmiyahu",
+   "perek": 49,
+   "published": "2026-11-01T02:19:46Z",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "r5Blp-4fNao",
    "title": "Yirmiyahu 48 - The Destruction of Moav - and Canada",
