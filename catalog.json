@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-02T02:35:45Z",
- "last_ok": 1793586945046,
- "count": 50,
+ "updated": "2026-11-02T23:38:04Z",
+ "last_ok": 1793662684244,
+ "count": 51,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "IT0HXf6FfoA",
+   "title": "Yirmiyahu 51 - Yirmiyahu’s Final Lessons",
+   "sefer": "yirmiyahu",
+   "perek": 51,
+   "published": "2026-11-02T23:37:53Z",
+   "duration": 327,
+   "audio": true
+  },
   {
    "id": "euPdpRF0x9Y",
    "title": "Yirmiyahu 50 - The Downfall of Bavel",
