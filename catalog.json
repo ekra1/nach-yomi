@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-02T23:38:04Z",
- "last_ok": 1793662684244,
- "count": 51,
+ "updated": "2026-11-03T21:50:54Z",
+ "last_ok": 1793742654513,
+ "count": 52,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "xCmiYRudvc8",
+   "title": "Yirmiyahu 52 - The Anticlimactic Climactic Ending",
+   "sefer": "yirmiyahu",
+   "perek": 52,
+   "published": "2026-11-03T13:49:23+00:00",
+   "duration": 378,
+   "audio": true
+  },
   {
    "id": "IT0HXf6FfoA",
    "title": "Yirmiyahu 51 - Yirmiyahu’s Final Lessons",
