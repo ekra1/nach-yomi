@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-04T03:03:19Z",
- "last_ok": 1793761399804,
- "count": 52,
+ "updated": "2026-11-04T22:26:58Z",
+ "last_ok": 1793831218589,
+ "count": 53,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "HuFChFuiZwQ",
+   "title": "Yechezkel 1 - maaseh merkava",
+   "sefer": "yechezkel",
+   "perek": 1,
+   "published": "2026-11-04T14:10:12+00:00",
+   "duration": 358,
+   "audio": true
+  },
   {
    "id": "xCmiYRudvc8",
    "title": "Yirmiyahu 52 - The Anticlimactic Climactic Ending",
