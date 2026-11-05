@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-05T03:33:11Z",
- "last_ok": 1793849591921,
- "count": 53,
+ "updated": "2026-11-05T22:05:52Z",
+ "last_ok": 1793916352415,
+ "count": 54,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "8A0T9G1rzkI",
+   "title": "Yechezkel 2 - Mission Impossible? The purpose of Yechezkel’s Prophecies",
+   "sefer": "yechezkel",
+   "perek": 2,
+   "published": "2026-11-05T13:09:46+00:00",
+   "duration": 291,
+   "audio": true
+  },
   {
    "id": "HuFChFuiZwQ",
    "title": "Yechezkel 1 - maaseh merkava",
