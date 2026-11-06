@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-06T03:28:39Z",
- "last_ok": 1793935719907,
- "count": 54,
+ "updated": "2026-11-06T21:35:56Z",
+ "last_ok": 1794000956854,
+ "count": 55,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "PeT5qXvCFkM",
+   "title": "Yechezkel 3 - Tel Aviv, Kedusha",
+   "sefer": "yechezkel",
+   "perek": 3,
+   "published": "2026-11-06T13:10:12+00:00",
+   "duration": 374,
+   "audio": true
+  },
   {
    "id": "8A0T9G1rzkI",
    "title": "Yechezkel 2 - Mission Impossible? The purpose of Yechezkel’s Prophecies",
