@@ -1,20 +1,29 @@
 {
- "updated": "2026-11-08T02:34:13Z",
- "last_ok": 1794105253722,
- "count": 56,
+ "updated": "2026-11-08T20:33:56Z",
+ "last_ok": 1794170036632,
+ "count": 57,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
   {
+   "id": "kYs0iGUg3_Q",
+   "title": "Yechezkel 5 - Know Thy Audience",
+   "sefer": "yechezkel",
+   "perek": 5,
+   "published": "2026-11-08T13:54:49+00:00",
+   "duration": 239,
+   "audio": true
+  },
+  {
    "id": "R_nMNHplX-E",
    "title": "Yechezkel 4 - Performance Art and a Return to Prophecy",
    "sefer": "yechezkel",
    "perek": 4,
    "published": "2026-11-08T02:34:07Z",
-   "duration": 0,
-   "audio": false
+   "duration": 330,
+   "audio": true
   },
   {
    "id": "PeT5qXvCFkM",
