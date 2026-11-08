@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-07T20:18:10Z",
- "last_ok": 1794082690460,
- "count": 55,
+ "updated": "2026-11-08T02:34:13Z",
+ "last_ok": 1794105253722,
+ "count": 56,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "R_nMNHplX-E",
+   "title": "Yechezkel 4 - Performance Art and a Return to Prophecy",
+   "sefer": "yechezkel",
+   "perek": 4,
+   "published": "2026-11-08T02:34:07Z",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "PeT5qXvCFkM",
    "title": "Yechezkel 3 - Tel Aviv, Kedusha",
