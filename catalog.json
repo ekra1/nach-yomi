@@ -1,12 +1,30 @@
 {
- "updated": "2026-11-10T00:18:44Z",
- "last_ok": 1794269924930,
- "count": 57,
+ "updated": "2026-11-10T21:51:10Z",
+ "last_ok": 1794347470645,
+ "count": 59,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "bk4BoXHffUc",
+   "title": "Yechezkel 7 - inspired enough to cry, appreciating what we have before it’s too late",
+   "sefer": "yechezkel",
+   "perek": 7,
+   "published": "2026-11-10T13:15:09+00:00",
+   "duration": 321,
+   "audio": true
+  },
+  {
+   "id": "4Zj0dkkm9T4",
+   "title": "Yechezkel 6 - Internalizing the suffering of others",
+   "sefer": "yechezkel",
+   "perek": 6,
+   "published": "2026-11-09T20:02:01+00:00",
+   "duration": 171,
+   "audio": true
+  },
   {
    "id": "kYs0iGUg3_Q",
    "title": "Yechezkel 5 - Know Thy Audience",
