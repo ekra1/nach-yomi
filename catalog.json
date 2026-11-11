@@ -1,12 +1,30 @@
 {
- "updated": "2026-11-11T02:52:18Z",
- "last_ok": 1794365538518,
- "count": 59,
+ "updated": "2026-11-11T22:47:34Z",
+ "last_ok": 1794437254102,
+ "count": 61,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "jKMOpJ2CfNs",
+   "title": "13b PART 2 - 11.11.26",
+   "sefer": null,
+   "perek": null,
+   "published": "2026-11-11T14:46:17+00:00",
+   "duration": 246,
+   "audio": true
+  },
+  {
+   "id": "89HAog-kwzY",
+   "title": "Yechezkel 8 - Are we still serving idols?",
+   "sefer": "yechezkel",
+   "perek": 8,
+   "published": "2026-11-11T14:40:33+00:00",
+   "duration": 350,
+   "audio": true
+  },
   {
    "id": "bk4BoXHffUc",
    "title": "Yechezkel 7 - inspired enough to cry, appreciating what we have before it’s too late",
