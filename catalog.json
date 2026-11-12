@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-12T03:53:01Z",
- "last_ok": 1794455581351,
- "count": 61,
+ "updated": "2026-11-12T22:17:50Z",
+ "last_ok": 1794521870431,
+ "count": 62,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "HbTbwft2uK0",
+   "title": "Yechezkel 9 - The Power of a Groan",
+   "sefer": "yechezkel",
+   "perek": 9,
+   "published": "2026-11-12T12:51:04+00:00",
+   "duration": 272,
+   "audio": true
+  },
   {
    "id": "jKMOpJ2CfNs",
    "title": "13b PART 2 - 11.11.26",
