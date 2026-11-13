@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-13T03:28:10Z",
- "last_ok": 1794540490893,
- "count": 62,
+ "updated": "2026-11-13T22:01:11Z",
+ "last_ok": 1794607271159,
+ "count": 63,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "QG06iEd8aY8",
+   "title": "Yechezkel 10 - The Function of Angels, Hashgacha in Exile",
+   "sefer": "yechezkel",
+   "perek": 10,
+   "published": "2026-11-13T13:22:55+00:00",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "HbTbwft2uK0",
    "title": "Yechezkel 9 - The Power of a Groan",
