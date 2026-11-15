@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-15T02:46:56Z",
- "last_ok": 1794710816902,
- "count": 64,
+ "updated": "2026-11-15T21:06:15Z",
+ "last_ok": 1794776775821,
+ "count": 65,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "ttaeR2lFStw",
+   "title": "Yechezkel 12 - Getting through in the Information Age",
+   "sefer": "yechezkel",
+   "perek": 12,
+   "published": "2026-11-15T14:06:29+00:00",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "1goUDXPHcZk",
    "title": "Yechezkel 11 -  The False Security of the Land of Israel, Failed Leadership, Small Sanctuary",
