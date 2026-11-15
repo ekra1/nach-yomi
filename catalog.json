@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-14T20:47:07Z",
- "last_ok": 1794689227093,
- "count": 63,
+ "updated": "2026-11-15T02:46:56Z",
+ "last_ok": 1794710816902,
+ "count": 64,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "1goUDXPHcZk",
+   "title": "Yechezkel 11 -  The False Security of the Land of Israel, Failed Leadership, Small Sanctuary",
+   "sefer": "yechezkel",
+   "perek": 11,
+   "published": "2026-11-15T02:46:46Z",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "QG06iEd8aY8",
    "title": "Yechezkel 10 - The Function of Angels, Hashgacha in Exile",
