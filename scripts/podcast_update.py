@@ -17,6 +17,8 @@ def fetch(url):
 def norm(t):return re.sub(r'\s+',' ',t.strip()).casefold()
 def probe(p):return float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=nw=1:nk=1',str(p)]))
 def captions(audio,vid):
+ import numpy as np
+ import wave
  from faster_whisper import WhisperModel
  model=WhisperModel('small.en',device='cpu',compute_type='int8',cpu_threads=2)
  words=[]
@@ -25,7 +27,11 @@ def captions(audio,vid):
   for start in range(0,int(duration)+1,80):
    f=pathlib.Path(wd)/'chunk.wav'
    subprocess.run(['ffmpeg','-v','error','-y','-ss',str(start),'-i',str(audio),'-t','80','-ar','16000','-ac','1',str(f)],check=True)
-   segs,_=model.transcribe(str(f),beam_size=1,language='en',vad_filter=True,word_timestamps=True,initial_prompt='Yechezkel. Yirmiyahu. Hashem. Beis HaMikdash. Bavel. Malbim. Radak. Abarbanel. Eretz Yisrael. Shechinah.')
+   # FFmpeg already decoded mono 16 kHz PCM. Pass samples directly so
+   # captioning does not depend on PyAV container-keyword compatibility.
+   with wave.open(str(f),'rb') as wav:
+    samples=np.frombuffer(wav.readframes(wav.getnframes()),dtype=np.int16).astype(np.float32)/32768.0
+   segs,_=model.transcribe(samples,beam_size=1,language='en',vad_filter=True,word_timestamps=True,initial_prompt='Yechezkel. Yirmiyahu. Hashem. Beis HaMikdash. Bavel. Malbim. Radak. Abarbanel. Eretz Yisrael. Shechinah.')
    for s in segs:
     for w in s.words:words.append({'start':w.start+start,'end':w.end+start,'word':w.word})
  lines=[];buf=[]
