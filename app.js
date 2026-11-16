@@ -187,6 +187,7 @@ async function start(it, autoplay) {
   syncPlayer(); render(); renderContinue();
   seek.value = 0; seek.max = it.duration || 100; $('#cur').textContent = fmt(pos[it.id] || 0); $('#rem').textContent = '-' + fmt((it.duration || 0) - (pos[it.id] || 0));
   setMediaSession(it);
+  if (!it.audio) { audio.pause(); audio.removeAttribute('src'); audio.load(); unavailable(it); return; }
   msg.textContent = 'Loading…';
   current._failed = false;
   load(it, token, autoplay);
@@ -195,8 +196,8 @@ async function start(it, autoplay) {
 // backend is busy the element errors, and we warm the stream and try again on the same element.
 function load(it, token, autoplay) {
   const startAt = played[it.id] ? 0 : (pos[it.id] || 0);
-  // Mirrored shiurim are plain files on this site; anything not mirrored yet streams through the YouTube backend.
-  audio.src = it.audio ? `audio/${it.id}.m4a` : (canHls ? `/hls/${it.id}/140.m3u8` : `/s/${it.id}/140.m4a`);
+  // Public podcast audio is mirrored here. Pending recordings do not use a nonexistent backend.
+  audio.src = `audio/${it.id}.m4a`;
   audio.addEventListener('loadedmetadata', () => {
     if (token !== loadToken) return;
     if (startAt > 3 && (!audio.duration || startAt < audio.duration - 5)) { try { audio.currentTime = startAt; } catch (e) {} }
