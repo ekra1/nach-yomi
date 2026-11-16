@@ -6,16 +6,15 @@
 <meta name="robots" content="noindex, nofollow, noarchive">
 <title>Nach Yomi · Rabbi Yisrael Motzen</title>
 <meta name="description" content="Every Nach Yomi shiur from Rabbi Yisrael Motzen's 5 Minute Nach, by sefer and perek, playing as audio in your phone's own player.">
-<meta name="theme-color" content="#14161c">
+<meta name="theme-color" content="#193441">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-title" content="Nach Yomi">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <link rel="manifest" href="manifest.webmanifest">
-<link rel="apple-touch-icon" href="apple-touch-icon.png?v=8">
-<link rel="icon" href="favicon.png?v=8" type="image/png">
-<link rel="shortcut icon" href="favicon.ico?v=8">
-<link rel="stylesheet" href="styles.css">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" href="favicon.png" type="image/png">
+<link rel="stylesheet" href="styles.css?v=nt1">
 </head>
 <body>
 <main class="wrap" id="main">
@@ -57,7 +56,7 @@
   <p id="empty" class="sub empty" hidden>No shiurim match that search.</p>
 
   <footer class="foot">
-    <p>New shiurim are added once a day: a scheduled job in this site's GitHub repository checks Rabbi Motzen's YouTube playlist and saves the audio here. Tap ↻ to reload the list.</p>
+    <p>Audio is drawn from Rabbi Motzen's public podcast feed. Tap ↻ to reload the library. New captions are automatic and may contain errors, especially Hebrew names and quotations.</p>
     <p>Source: <a href="https://www.youtube.com/playlist?list=PLSK0XEJA9jdw" rel="noopener">5 Minute Nach on YouTube</a>. Want the video too? Each shiur has a “Watch video” link.</p>
     <p>Tip: in Safari tap Share → Add to Home Screen to keep this as an app.</p>
   </footer>
@@ -87,15 +86,22 @@
       </button>
     </div>
     <div class="pl-more">
+      <button type="button" id="capBtn" class="link" aria-pressed="false">Captions</button>
       <button type="button" id="plPlayed" class="link" aria-pressed="false">Mark played</button>
       <label class="chk"><input type="checkbox" id="auto" checked> Auto-play next perek</label>
       <a id="plVideo" class="link" href="#" rel="noopener">Watch video</a>
     </div>
   </div>
+  <div id="revBox" class="rev" hidden></div>
   <audio id="audio" preload="none" playsinline x-webkit-airplay="allow"></audio>
 </section>
 
 <script src="nach.js" defer></script>
+<script src="seed.js" defer></script>
 <script src="app.js" defer></script>
+<div id="lyr" hidden><div class="lyr-top"><span id="lyrT"></span><button type="button" id="lyrX" aria-label="Close captions">✕</button></div><div id="lyrBox"></div></div>
+<script src="captions.js?v=nt1"></script>
+<script src="review.js?v=nt1"></script>
+
 </body>
 </html>

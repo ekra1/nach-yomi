@@ -1,6 +1,7 @@
 (() => {
 'use strict';
 const $ = s => document.querySelector(s);
+const NATIVEPLAY = 'https://nativeplay.sites.tab.bot/?u=';
 const SPEEDS = [1, 1.25, 1.5, 1.75, 2, 2.5, 0.75];
 const store = {
   get(k, d) { try { const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); } catch (e) { return d; } },
@@ -56,7 +57,7 @@ function statusLine(extra) {
 // ---------- catalog ----------
 async function loadCatalog(force) {
   const btn = $('#refresh'); btn.classList.add('spin'); btn.disabled = true;
-  if (force) status('Checking for new shiurim…');
+  if (force) status('Checking YouTube for new shiurim…');
   try {
     const r = await fetch('catalog.json?t=' + Date.now(), { cache: 'no-store' });
     if (!r.ok) throw new Error('HTTP ' + r.status);
@@ -66,7 +67,8 @@ async function loadCatalog(force) {
     store.set('ny.catalog', { at: Date.now(), items: j.items, last_ok: j.last_ok });
     setItems(j.items);
     const fresh = items.filter(i => !before.has(i.id)).length;
-    statusLine(force ? (fresh ? fresh + ' new' : 'up to date') : '');
+    statusLine(force ? (fresh ? fresh + ' new' : (j.note === 'refreshing' ? 'still checking' : 'up to date')) : '');
+    if (j.note === 'refreshing' && !force) setTimeout(() => loadCatalog(false), 8000);
   } catch (e) {
     statusLine(force ? 'couldn’t reach the server, showing saved list' : '');
   } finally { btn.classList.remove('spin'); btn.disabled = false; }
@@ -166,14 +168,22 @@ function syncPlayer() {
   const done = !!played[current.id];
   $('#plPlayed').setAttribute('aria-pressed', String(done)); $('#plPlayed').textContent = done ? '✓ Played' : 'Mark played';
 }
+async function warm(id) {
+  for (let i = 0; i < 5; i++) {
+    try { const r = await fetch('/api/info?v=' + id, { cache: 'no-store' }); if (r.ok) return await r.json();
+      if (r.status !== 503) { const j = await r.json().catch(() => ({})); throw new Error(j.error || ('HTTP ' + r.status)); } } catch (e) { if (i === 4) throw e; }
+    await new Promise(res => setTimeout(res, 700 + i * 500));
+  }
+  throw new Error('busy');
+}
 async function start(it, autoplay) {
   if (current && current.id !== it.id) savePos(true);
   current = it; const token = ++loadToken;
   store.set('ny.last', it.id);
   playerEl.hidden = false; document.body.classList.add('playing'); expand(true);
   $('#plT').textContent = it.label; $('#plS').textContent = it.sub || 'Rabbi Yisrael Motzen';
-  $('#plImg').src = 'https://i.ytimg.com/vi/' + it.id + '/mqdefault.jpg';
-  $('#plVideo').href = 'https://www.youtube.com/watch?v=' + encodeURIComponent(it.id);
+  $('#plImg').src = 'thumb.svg';
+  $('#plVideo').href = NATIVEPLAY + encodeURIComponent('https://www.youtube.com/watch?v=' + it.id);
   syncPlayer(); render(); renderContinue();
   seek.value = 0; seek.max = it.duration || 100; $('#cur').textContent = fmt(pos[it.id] || 0); $('#rem').textContent = '-' + fmt((it.duration || 0) - (pos[it.id] || 0));
   setMediaSession(it);
@@ -185,9 +195,8 @@ async function start(it, autoplay) {
 // backend is busy the element errors, and we warm the stream and try again on the same element.
 function load(it, token, autoplay) {
   const startAt = played[it.id] ? 0 : (pos[it.id] || 0);
-  // Every shiur's audio is a plain file in this repo; one without audio yet links to YouTube.
-  if (!it.audio) { audio.removeAttribute('src'); unavailable(it); return; }
-  audio.src = `audio/${it.id}.m4a`;
+  // Mirrored shiurim are plain files on this site; anything not mirrored yet streams through the YouTube backend.
+  audio.src = it.audio ? `audio/${it.id}.m4a` : (canHls ? `/hls/${it.id}/140.m3u8` : `/s/${it.id}/140.m4a`);
   audio.addEventListener('loadedmetadata', () => {
     if (token !== loadToken) return;
     if (startAt > 3 && (!audio.duration || startAt < audio.duration - 5)) { try { audio.currentTime = startAt; } catch (e) {} }
@@ -263,7 +272,8 @@ audio.addEventListener('error', async () => {
   it._tries = (it._tries || 0) + 1; msg.textContent = 'Connecting…';
   if (audio.currentTime > 3) { pos[it.id] = Math.floor(audio.currentTime); store.set('ny.pos', pos); }
   if (it.audio) { await new Promise(r => setTimeout(r, 800)); if (token === loadToken) load(it, token, true); return; }
-  if (token === loadToken) unavailable(it);
+  try { await warm(it.id); } catch (e) { if (token === loadToken) { unavailable(it); } return; }
+  if (token === loadToken) load(it, token, true);
 });
 audio.addEventListener('canplay', () => { if (current) current._tries = 0; });
 window.addEventListener('pagehide', () => savePos(true));
@@ -272,7 +282,7 @@ function setMediaSession(it) {
   if (!('mediaSession' in navigator)) return;
   try {
     navigator.mediaSession.metadata = new MediaMetadata({ title: it.label + (it.sub ? ' – ' + it.sub : ''), artist: 'Rabbi Yisrael Motzen', album: 'Nach Yomi',
-      artwork: [{ src: 'https://i.ytimg.com/vi/' + it.id + '/hqdefault.jpg', sizes: '480x360', type: 'image/jpeg' }, { src: 'icon-512.png', sizes: '512x512', type: 'image/png' }] });
+      artwork: [{ src: 'https://i.ytimg.com/vi/' + it.id + '/hqdefault.jpg', sizes: '480x360', type: 'image/jpeg' }, { src: '/icon-512.png', sizes: '512x512', type: 'image/png' }] });
     const ms = navigator.mediaSession, h = (a, f) => { try { ms.setActionHandler(a, f); } catch (e) {} };
     h('play', () => audio.play()); h('pause', () => audio.pause());
     h('seekbackward', d => { audio.currentTime = Math.max(0, audio.currentTime - ((d && d.seekOffset) || 15)); });

@@ -1,31 +1,19 @@
-# Nach Yomi · Rabbi Yisrael Motzen
+# Nach Yomi - Rabbi Yisrael Motzen
 
-Every shiur from Rabbi Yisrael Motzen's **5 Minute Nach**, by sefer and perek, as audio that plays in your phone's own player (lock screen, speed control, remembers where you stopped).
+Owner-controlled successor to the original Nach library. Existing audio, timed captions and review notes are retained; the unrelated 13b Gemara shiur is excluded from this library only.
 
-**Open it:** https://ekra1.github.io/nach-yomi/
-(On iPhone: Safari → Share → Add to Home Screen to keep it as an app.)
+Open: https://ekra1.github.io/nach-yomi/
 
-## How it works
+## Operation
 
-- It is a plain static website: `index.html`, `app.js`, `nach.js`, `styles.css`, icons.
-- `catalog.json` lists every shiur (YouTube id, title, date, length, whether audio is saved).
-- `audio/<YouTube id>.m4a` is each shiur's audio (AAC, 48 kbps mono, about 2 MB each).
-- GitHub Pages publishes the site (`.github/workflows/pages.yml`, on every push to `main`).
-- `.github/workflows/update.yml` runs twice a day. To run it now: Actions tab → "Daily update (new shiurim)" → Run workflow, or edit the file `.github/run-update` (any change) and commit. It runs `scripts/update.py`, which checks the 5 Minute Nach playlist and the channel's feed, downloads new shiurim with yt-dlp, converts them with ffmpeg, updates `catalog.json`, commits, and republishes.
+The scheduled workflow reads the public podcast RSS and YouTube metadata. It downloads matching Nach recordings from public podcast enclosures, converts them to AAC, and generates automatic timed captions locally on the standard GitHub runner. No paid transcription API or YouTube authentication cookies are required. Hebrew names and quotations in automatic captions may contain errors.
 
-YouTube often blocks downloads from GitHub's servers ("Sign in to confirm you're not a bot"). When that happens the script tries, in order: other YouTube player clients; your cookies, if you saved a YouTube `cookies.txt` as the repository secret `YT_COOKIES` (Settings → Secrets and variables → Actions; best from a spare Google account); and the public audio copy on the original library site (motzen-nach.sites.tab.bot) while it exists. If all fail, the shiur still appears in the list with a "Watch on YouTube" link and is retried on the next run.
+`maintenance-state.json` records errors and pending reviews. Review points are written from the actual captions/audio by the maintenance assistant; they are not generated from titles or silently marked ready. A missing review stays visibly pending. The workflow alone does not write reviews. The assistant maintenance schedule is established separately.
 
-To add the audio yourself from any computer with Python, `yt-dlp` and `ffmpeg` (home internet is rarely blocked):
+The old Tab-hosted app and its browser-local progress are not changed. The successor uses its own local listening history. No progress data is sent to the repository.
 
-```
-git clone https://github.com/ekra1/nach-yomi && cd nach-yomi
-pip install -U yt-dlp
-python3 scripts/update.py
-git add -A && git commit -m "Add new shiurim" && git push
-```
+## Recovery
 
-## Size
+Pre-takeover main commit: da097ffc204cb9ee10a24af7feb509197283502f. Keep this reference for rollback. Do not restore an old automated updater over the successor without reviewing the maintenance contract.
 
-GitHub Pages sites can be up to 1 GB. At about 2 MB per shiur, that is roughly 450 shiurim. When `audio/` passes ~800 MB the daily job's summary says so; older sefarim can then move to a GitHub Release.
-
-Shiurim © Rabbi Yisrael Motzen; source: [5 Minute Nach on YouTube](https://www.youtube.com/playlist?list=PLSK0XEJA9jdw).
+Source recordings and shiurim belong to Rabbi Yisrael Motzen. Public podcast RSS: https://anchor.fm/s/11165f74/podcast/rss
