@@ -1,17 +1,8 @@
 {
-  "checked_at": "2026-11-16T18:03:47Z",
+  "checked_at": "2026-11-17T00:18:25Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [
-    "3ssWvVlgOJ8"
-  ],
-  "pending_reviews": [
-    {
-      "id": "3ssWvVlgOJ8",
-      "title": "Yechezkel 13 - Solution-focused, selfless leadership; making the comfortable uncomfortable ",
-      "caption": "c/3ssWvVlgOJ8.json",
-      "audio": "audio/3ssWvVlgOJ8.m4a"
-    }
-  ],
+  "completed": [],
+  "pending_reviews": [],
   "awaiting_audio": [],
   "errors": []
 }
