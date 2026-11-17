@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-17T00:18:25Z",
- "last_ok": 1794874705309,
- "count": 65,
+ "updated": "2026-11-17T17:52:02Z",
+ "last_ok": 1794937922998,
+ "count": 66,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "uF5JL6tYnxM",
+   "title": "Yechezkel 14 - Misquoting Gedolim, the Limits of Tzadikkim, the Comfort of Knowing Why",
+   "sefer": "yechezkel",
+   "perek": 14,
+   "published": "2026-11-17T12:17:38+00:00",
+   "duration": 215,
+   "audio": true
+  },
   {
    "id": "3ssWvVlgOJ8",
    "title": "Yechezkel 13 - Solution-focused, selfless leadership; making the comfortable uncomfortable ",

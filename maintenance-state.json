@@ -1,8 +1,17 @@
 {
-  "checked_at": "2026-11-17T00:18:25Z",
+  "checked_at": "2026-11-17T17:52:02Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
+  "completed": [
+    "uF5JL6tYnxM"
+  ],
+  "pending_reviews": [
+    {
+      "id": "uF5JL6tYnxM",
+      "title": "Yechezkel 14 - Misquoting Gedolim, the Limits of Tzadikkim, the Comfort of Knowing Why",
+      "caption": "c/uF5JL6tYnxM.json",
+      "audio": "audio/uF5JL6tYnxM.m4a"
+    }
+  ],
   "awaiting_audio": [],
   "errors": []
 }
