@@ -1,17 +1,8 @@
 {
-  "checked_at": "2026-11-18T17:51:15Z",
+  "checked_at": "2026-11-18T22:58:49Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [
-    "Ym9BQgnBpP8"
-  ],
-  "pending_reviews": [
-    {
-      "id": "Ym9BQgnBpP8",
-      "title": "Yechezkel 15 - Making wine in Baltimore, the Jewish People’s Material Contribution is not Needed ",
-      "caption": "c/Ym9BQgnBpP8.json",
-      "audio": "audio/Ym9BQgnBpP8.m4a"
-    }
-  ],
+  "completed": [],
+  "pending_reviews": [],
   "awaiting_audio": [],
   "errors": []
 }
