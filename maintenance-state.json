@@ -1,17 +1,8 @@
 {
-  "checked_at": "2026-11-19T17:51:09Z",
+  "checked_at": "2026-11-19T23:06:28Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [
-    "J0zMTiYNERM"
-  ],
-  "pending_reviews": [
-    {
-      "id": "J0zMTiYNERM",
-      "title": "Yechezkel 16 - How to NOT Motivate Change ",
-      "caption": "c/J0zMTiYNERM.json",
-      "audio": "audio/J0zMTiYNERM.m4a"
-    }
-  ],
+  "completed": [],
+  "pending_reviews": [],
   "awaiting_audio": [],
   "errors": []
 }
