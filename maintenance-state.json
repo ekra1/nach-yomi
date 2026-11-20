@@ -1,14 +1,17 @@
 {
-  "checked_at": "2026-11-20T17:50:43Z",
+  "checked_at": "2026-11-20T18:22:44Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
-  "awaiting_audio": [
+  "completed": [
+    "YM0sYFyCFZw"
+  ],
+  "pending_reviews": [
     {
       "id": "YM0sYFyCFZw",
       "title": "Yechezkel 17 - Kavod is a Monster ",
-      "reason": "Matching public podcast audio not published yet"
+      "caption": "c/YM0sYFyCFZw.json",
+      "audio": "audio/YM0sYFyCFZw.m4a"
     }
   ],
+  "awaiting_audio": [],
   "errors": []
 }
