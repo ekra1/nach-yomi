@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-21T21:42:44Z",
- "last_ok": 1795297364002,
- "count": 69,
+ "updated": "2026-11-22T03:16:33Z",
+ "last_ok": 1795317393484,
+ "count": 70,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "syDUYFNHon0",
+   "title": "Yechezkel 18 - The Incredible Power of Teshuva",
+   "sefer": "yechezkel",
+   "perek": 18,
+   "published": "2026-11-22T00:07:02+00:00",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "YM0sYFyCFZw",
    "title": "Yechezkel 17 - Kavod is a Monster ",
