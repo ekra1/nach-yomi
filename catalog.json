@@ -1,6 +1,6 @@
 {
- "updated": "2026-11-22T03:16:33Z",
- "last_ok": 1795317393484,
+ "updated": "2026-11-22T17:51:07Z",
+ "last_ok": 1795369867245,
  "count": 70,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
@@ -13,8 +13,8 @@
    "sefer": "yechezkel",
    "perek": 18,
    "published": "2026-11-22T00:07:02+00:00",
-   "duration": 0,
-   "audio": false
+   "duration": 309,
+   "audio": true
   },
   {
    "id": "YM0sYFyCFZw",

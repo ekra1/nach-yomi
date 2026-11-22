@@ -1,14 +1,17 @@
 {
-  "checked_at": "2026-11-22T03:16:33Z",
+  "checked_at": "2026-11-22T17:51:07Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
-  "awaiting_audio": [
+  "completed": [
+    "syDUYFNHon0"
+  ],
+  "pending_reviews": [
     {
       "id": "syDUYFNHon0",
       "title": "Yechezkel 18 - The Incredible Power of Teshuva",
-      "reason": "Matching public podcast audio not published yet"
+      "caption": "c/syDUYFNHon0.json",
+      "audio": "audio/syDUYFNHon0.m4a"
     }
   ],
+  "awaiting_audio": [],
   "errors": []
 }
