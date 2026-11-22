@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-22T17:51:07Z",
- "last_ok": 1795369867245,
- "count": 70,
+ "updated": "2026-11-22T18:01:53Z",
+ "last_ok": 1795370513145,
+ "count": 71,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "-UhF_8LcgvA",
+   "title": "Yechezkel 19 - transforming the news into a lamentation  ",
+   "sefer": "yechezkel",
+   "perek": 19,
+   "published": "2026-11-22T17:56:46+00:00",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "syDUYFNHon0",
    "title": "Yechezkel 18 - The Incredible Power of Teshuva",
