@@ -1,20 +1,29 @@
 {
- "updated": "2026-11-23T03:45:39Z",
- "last_ok": 1795405539721,
- "count": 71,
+ "updated": "2026-11-23T17:51:57Z",
+ "last_ok": 1795456317284,
+ "count": 72,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
   {
+   "id": "T41lWGcOaIo",
+   "title": "Yechezkel 20 - an overview of Jewish history, Chillul Hashem ",
+   "sefer": "yechezkel",
+   "perek": 20,
+   "published": "2026-11-23T13:07:54+00:00",
+   "duration": 306,
+   "audio": true
+  },
+  {
    "id": "-UhF_8LcgvA",
    "title": "Yechezkel 19 - transforming the news into a lamentation  ",
    "sefer": "yechezkel",
    "perek": 19,
    "published": "2026-11-22T17:56:46+00:00",
-   "duration": 0,
-   "audio": false
+   "duration": 296,
+   "audio": true
   },
   {
    "id": "syDUYFNHon0",
