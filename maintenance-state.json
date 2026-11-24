@@ -1,8 +1,17 @@
 {
-  "checked_at": "2026-11-24T03:15:52Z",
+  "checked_at": "2026-11-24T17:50:24Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
+  "completed": [
+    "RzmfhXcOVvA"
+  ],
+  "pending_reviews": [
+    {
+      "id": "RzmfhXcOVvA",
+      "title": "Yechezkel 21 - the righteous get punished with the evildoers, wedding crowns ",
+      "caption": "c/RzmfhXcOVvA.json",
+      "audio": "audio/RzmfhXcOVvA.m4a"
+    }
+  ],
   "awaiting_audio": [],
   "errors": []
 }

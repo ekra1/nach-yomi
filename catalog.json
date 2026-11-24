@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-24T03:15:52Z",
- "last_ok": 1795490152039,
- "count": 72,
+ "updated": "2026-11-24T17:50:24Z",
+ "last_ok": 1795542624957,
+ "count": 73,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "RzmfhXcOVvA",
+   "title": "Yechezkel 21 - the righteous get punished with the evildoers, wedding crowns ",
+   "sefer": "yechezkel",
+   "perek": 21,
+   "published": "2026-11-24T15:25:40+00:00",
+   "duration": 297,
+   "audio": true
+  },
   {
    "id": "T41lWGcOaIo",
    "title": "Yechezkel 20 - an overview of Jewish history, Chillul Hashem ",
