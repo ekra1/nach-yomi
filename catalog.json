@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-25T00:51:11Z",
- "last_ok": 1795567871067,
- "count": 73,
+ "updated": "2026-11-25T17:52:49Z",
+ "last_ok": 1795629169581,
+ "count": 74,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "yJMAm5TKmy8",
+   "title": "Yechezkel 22 - Sinning/ Doing Mitzvos in Israel ",
+   "sefer": "yechezkel",
+   "perek": 22,
+   "published": "2026-11-25T13:06:11+00:00",
+   "duration": 0,
+   "audio": false
+  },
   {
    "id": "RzmfhXcOVvA",
    "title": "Yechezkel 21 - the righteous get punished with the evildoers, wedding crowns ",
