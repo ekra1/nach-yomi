@@ -1,14 +1,17 @@
 {
-  "checked_at": "2026-11-25T17:52:49Z",
+  "checked_at": "2026-11-25T18:00:28Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
-  "awaiting_audio": [
+  "completed": [
+    "yJMAm5TKmy8"
+  ],
+  "pending_reviews": [
     {
       "id": "yJMAm5TKmy8",
       "title": "Yechezkel 22 - Sinning/ Doing Mitzvos in Israel ",
-      "reason": "Matching public podcast audio not published yet"
+      "caption": "c/yJMAm5TKmy8.json",
+      "audio": "audio/yJMAm5TKmy8.m4a"
     }
   ],
+  "awaiting_audio": [],
   "errors": []
 }
