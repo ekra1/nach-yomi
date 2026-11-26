@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-26T00:30:15Z",
- "last_ok": 1795653015636,
- "count": 74,
+ "updated": "2026-11-26T17:50:50Z",
+ "last_ok": 1795715450900,
+ "count": 75,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "-KXt_pB8E9E",
+   "title": "Yechezkel 23 - Not learning from others, our sins are our punishments ",
+   "sefer": "yechezkel",
+   "perek": 23,
+   "published": "2026-11-26T15:31:38+00:00",
+   "duration": 297,
+   "audio": true
+  },
   {
    "id": "yJMAm5TKmy8",
    "title": "Yechezkel 22 - Sinning/ Doing Mitzvos in Israel ",
