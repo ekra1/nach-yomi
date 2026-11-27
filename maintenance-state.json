@@ -1,17 +1,8 @@
 {
-  "checked_at": "2026-11-26T17:50:50Z",
+  "checked_at": "2026-11-27T00:40:21Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [
-    "-KXt_pB8E9E"
-  ],
-  "pending_reviews": [
-    {
-      "id": "-KXt_pB8E9E",
-      "title": "Yechezkel 23 - Not learning from others, our sins are our punishments ",
-      "caption": "c/-KXt_pB8E9E.json",
-      "audio": "audio/-KXt_pB8E9E.m4a"
-    }
-  ],
+  "completed": [],
+  "pending_reviews": [],
   "awaiting_audio": [],
   "errors": []
 }
