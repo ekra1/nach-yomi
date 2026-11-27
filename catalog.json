@@ -1,12 +1,21 @@
 {
- "updated": "2026-11-27T00:40:21Z",
- "last_ok": 1795740021458,
- "count": 75,
+ "updated": "2026-11-27T17:50:04Z",
+ "last_ok": 1795801804027,
+ "count": 76,
  "source": {
   "playlist": "https://www.youtube.com/playlist?list=PLSK0XEJA9jdw",
   "channel": "https://www.youtube.com/channel/UC-BXhEPqRXcCeyiWu8iTYpg"
  },
  "items": [
+  {
+   "id": "TnXson_41EE",
+   "title": "Yechezkel 24 - The Gift of Mourning",
+   "sefer": "yechezkel",
+   "perek": 24,
+   "published": "2026-11-27T15:40:49+00:00",
+   "duration": 162,
+   "audio": true
+  },
   {
    "id": "-KXt_pB8E9E",
    "title": "Yechezkel 23 - Not learning from others, our sins are our punishments ",

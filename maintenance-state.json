@@ -1,8 +1,17 @@
 {
-  "checked_at": "2026-11-27T00:40:21Z",
+  "checked_at": "2026-11-27T17:50:04Z",
   "source": "https://anchor.fm/s/11165f74/podcast/rss",
-  "completed": [],
-  "pending_reviews": [],
+  "completed": [
+    "TnXson_41EE"
+  ],
+  "pending_reviews": [
+    {
+      "id": "TnXson_41EE",
+      "title": "Yechezkel 24 - The Gift of Mourning",
+      "caption": "c/TnXson_41EE.json",
+      "audio": "audio/TnXson_41EE.m4a"
+    }
+  ],
   "awaiting_audio": [],
   "errors": []
 }
